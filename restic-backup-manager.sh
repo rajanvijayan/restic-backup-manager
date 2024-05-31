@@ -14,8 +14,10 @@ RESTIC_PASSWORD="Uj56#UUKas"
 
 # Function to log messages
 log_message() {
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a $LOG_FILE
+    local message="$1"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $message" | tee -a "$LOG_FILE"
 }
+
 
 # Function to initialize the repository
 initialize_repo() {
